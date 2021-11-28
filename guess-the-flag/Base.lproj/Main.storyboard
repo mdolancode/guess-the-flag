@@ -16,29 +16,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfw-IC-jGo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfw-IC-jGo">
                                 <rect key="frame" x="107" y="230" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="us"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPO-Sl-56I">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPO-Sl-56I">
                                 <rect key="frame" x="107" y="360" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="us"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjH-bu-t5b">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjH-bu-t5b">
                                 <rect key="frame" x="107" y="100" width="200" height="100"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" image="us"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="OPO-Sl-56I" firstAttribute="centerX" secondItem="yfw-IC-jGo" secondAttribute="centerX" id="H1P-sr-gwU"/>
                             <constraint firstItem="UjH-bu-t5b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Ps1-Bk-HP2"/>
                             <constraint firstItem="UjH-bu-t5b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hcg-pj-eKq"/>
+                            <constraint firstItem="yfw-IC-jGo" firstAttribute="centerX" secondItem="UjH-bu-t5b" secondAttribute="centerX" id="j6n-xH-U4T"/>
+                            <constraint firstItem="yfw-IC-jGo" firstAttribute="top" secondItem="UjH-bu-t5b" secondAttribute="bottom" constant="30" id="p1f-3V-5DA"/>
+                            <constraint firstItem="OPO-Sl-56I" firstAttribute="top" secondItem="yfw-IC-jGo" secondAttribute="bottom" constant="30" id="xe6-ac-pIq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s9O-aP-Icr"/>
+                    <connections>
+                        <outlet property="button1" destination="UjH-bu-t5b" id="KI5-jS-PAS"/>
+                        <outlet property="button2" destination="yfw-IC-jGo" id="D09-2A-HzE"/>
+                        <outlet property="button3" destination="OPO-Sl-56I" id="IOn-JL-B3S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,6 +71,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="us" width="200" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
