@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var button1: UIButton!
     @IBOutlet var button2: UIButton!
     @IBOutlet var button3: UIButton!
@@ -33,10 +33,11 @@ class ViewController: UIViewController {
         
         countries += ["estonia", "france", "germany", "ireland", "italy", "monaco", "nigeria", "poland", "russia", "spain", "uk", "us"]
         
+        // another option -> askQuestion(action: nil)
         askQuestion()
     }
     
-    func askQuestion() {
+    func askQuestion(action: UIAlertAction! = nil) {
         countries.shuffle()
         
         button1.setImage(UIImage(named: countries[0]), for: .normal)
@@ -45,7 +46,25 @@ class ViewController: UIViewController {
         
         correctAnswer = Int.random(in: 0...2)
         title = countries[correctAnswer].uppercased()
+    }
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        var title: String
         
+        if sender.tag == correctAnswer {
+            title = "Correct"
+            score += 1
+        } else {
+            title = "Wrong!"
+            score -= 1
+        }
+        
+        // Apple recommends you use .alert when telling users about a situation change, and .actionSheet when asking them to choose from a set of options.
+        let ac = UIAlertController(title: title, message: "Your score is \(score).", preferredStyle: .alert)
+        
+        // There are three possible styles: .default, .cancel, and .destructive. What these look like depends on iOS, but it's important you use them appropriately because they provide subtle user interface hints to users.
+        ac.addAction(UIAlertAction(title: "Continue", style: .default, handler: askQuestion))
+        present(ac, animated: true)
     }
 }
 
