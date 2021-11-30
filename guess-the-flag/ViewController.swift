@@ -46,8 +46,7 @@ class ViewController: UIViewController {
         button3.setImage(UIImage(named: countries[2]), for: .normal)
         
         correctAnswer = Int.random(in: 0...2)
-//        title = countries[correctAnswer].uppercased()
-        title = "Flag - \(countries[correctAnswer].uppercased())" + "  Score - \(score)/\(totalQuestions) "
+        title = "Flag: \(countries[correctAnswer].uppercased())" + "  Score: \(score)/\(totalQuestions) "
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
@@ -58,7 +57,7 @@ class ViewController: UIViewController {
             score += 1
             totalQuestions += 1
         } else {
-            title = "Wrong!"
+            title = "Wrong! This is the flag of \(countries[sender.tag].uppercased())!"
             score -= 1
             totalQuestions += 1
         }
