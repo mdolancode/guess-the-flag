@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(tapForScore))
+        
         button1.layer.borderWidth = 1
         button2.layer.borderWidth = 1
         button3.layer.borderWidth = 1
@@ -36,6 +38,12 @@ class ViewController: UIViewController {
         
         // another option -> askQuestion(action: nil)
         askQuestion()
+    }
+    
+    @objc func tapForScore() {
+        let vc = UIActivityViewController(activityItems: ["Your Current Score Is: \(score)/\(totalQuestions)"], applicationActivities: [])
+        vc.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(vc, animated: true)
     }
     
     func askQuestion(action: UIAlertAction! = nil) {
